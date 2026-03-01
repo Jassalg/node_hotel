@@ -10,6 +10,12 @@ const app =  express();
 
 app.use(bodyParser.json());
 
+const logRequest = (req,res,next)=>{
+  console.log(`[${new Date().toLocaleString()}] Request made to:${req.originalUrl}`);
+  next();
+}
+app.use(logRequest);
+
 
 app.get('/',(req,res)=>{
   res.json({"data":"hello this is home"})
@@ -25,6 +31,7 @@ const person = require('./Routes/personRoutes');
 // for the menu
 const menu = require('./Routes/menuItem');
 app.use('/menu',menu);
+
 
 // heading CRUD for the pratice 
 

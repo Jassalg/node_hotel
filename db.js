@@ -1,16 +1,20 @@
 // use to connect the mongoose with the nodejs 
 const mongoose = require('mongoose');
+const dns = require('dns');
+require('dotenv').config();
+
 
 // mongo db url 
-const mongourl = 'mongodb://127.0.0.1:27017/hotels';
-
-// connect to MongoDB
+const mongourl = process.env.LOCALURL;
+// const mongoURL = "mongodb+srv://tanishjassal1994_db_user:cRtfmR7b3MenRE31@cluster0.vwlz3cu.mongodb.net/?appName=Cluster0"
 mongoose.connect(mongourl);
 
 // get the default connection
 const db = mongoose.connection;
 
 // define the event listeners
+
+
 
 db.on('connected', () => {
     console.log('Connected to MongoDB server');
