@@ -6,7 +6,7 @@ require('dotenv').config();
 
 // mongo db url 
 const mongourl = process.env.LOCALURL;
-// const mongoURL = "mongodb+srv://tanishjassal1994_db_user:cRtfmR7b3MenRE31@cluster0.vwlz3cu.mongodb.net/?appName=Cluster0"
+
 mongoose.connect(mongourl);
 
 // get the default connection
